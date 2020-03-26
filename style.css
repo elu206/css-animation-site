@@ -1,0 +1,61 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #000000;
+}
+
+.gridContainer{
+  margin: 5vmin;
+  margin-top: 8vmin;
+  border: #ffffff;
+  border-width: 5px;
+  border-style: solid;
+}
+
+/* animated background color changing when you hover: referenced https://www.tutorialrepublic.com/faq/how-to-animate-background-color-on-mouse-hover-using-css.php */
+.screamingGoat{
+  background-color: #ffd045;
+  display: grid;
+  grid-template-columns: repeat(8,5fr);
+  transition: background-color 1.5s;
+}
+
+.screamingGoat:hover{
+    background-color: #db492c;
+}
+
+/* letters typing out: referenced https://css-tricks.com/snippets/css/typewriter-effect/ */
+.goatScream{
+  margin-top:0px;
+  padding-left: 30px;
+  font-size: 5vmin;
+  color: #ffffff;
+  position: absolute;
+  font-family: 'Rubik Mono One', sans-serif;
+  overflow:hidden;
+  white-space: nowrap;
+  animation: scream 3s steps(100,end);
+  animation-iteration-count: infinite;
+}
+
+.fullWidthImage{
+  grid-column:4/1;
+  width:100%;
+}
+
+.item-5x5{
+  grid-column-end: span 5;
+  grid-row-end: span 5;
+}
+
+.item-5x8{
+  grid-column-end: span 8;
+  grid-row-end: span 5;
+}
+
+@keyframes scream {
+  from {width: 0}
+  to {width: 100%}
+}
